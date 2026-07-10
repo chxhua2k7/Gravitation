@@ -278,7 +278,7 @@ void toggleAnimations()
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     %orig;
-    if(event.type == UIEventSubtypeMotionShake)
+    if(event.subtype == UIEventSubtypeMotionShake)
     {
         toggleAnimations();
     }
