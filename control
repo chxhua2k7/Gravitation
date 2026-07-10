@@ -1,8 +1,8 @@
 Package: me.kritanta.gravitation
 Name: Gravitation
-Depends: mobilesubstrate
+Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0)
 Version: 0.1.0
-Architecture: iphoneos-arm
+Architecture: iphoneos-arm64
 Description: Shake your phone to unhinge your icons!
 Maintainer: Kritanta
 Author: Kritanta

@@ -1,4 +1,6 @@
 .dragon/
-gravitationprefs/.dragon 
+gravitationprefs/.dragon
+.theos/
+gravitationprefs/.theos/
 packages/
 .DS_Store
