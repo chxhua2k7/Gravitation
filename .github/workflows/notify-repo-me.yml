@@ -1,0 +1,17 @@
+name: Notify repo.me
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger sync in chxhua2k7/repo.me
+        env:
+          GH_TOKEN: ${{ secrets.REPO_ME_DISPATCH_TOKEN }}
+        run: |
+          gh api repos/chxhua2k7/repo.me/dispatches \
+            -f event_type=release-sync \
+            -f "client_payload[repo]=${{ github.repository }}"
