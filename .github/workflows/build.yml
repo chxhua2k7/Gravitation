@@ -65,3 +65,12 @@ jobs:
           name: ${{ steps.info.outputs.name }} ${{ steps.info.outputs.version }}
           prerelease: ${{ github.ref != 'refs/heads/main' }}
           files: packages/*.deb
+
+      - name: Notify repo.me
+        if: github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ secrets.REPO_ME_DISPATCH_TOKEN }}
+        run: |
+          gh api repos/chxhua2k7/repo.me/dispatches \
+            -f event_type=release-sync \
+            -f "client_payload[repo]=${{ github.repository }}"
